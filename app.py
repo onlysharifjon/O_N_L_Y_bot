@@ -9,10 +9,10 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton
 import asyncio
 
-API_TOKEN = '5438743805:AAEELhyGnWAEhCJByyrd62jyp8RNRPm1Tks'
+API_TOKEN = 'TOKEN BOT'
 
 logging.basicConfig(level=logging.INFO)
-ADMINS = 5215767348
+ADMINS = USER ID
 bot = Bot(token=API_TOKEN, parse_mode='HTML')
 dp = Dispatcher(bot)
 
