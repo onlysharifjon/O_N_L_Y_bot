@@ -9,7 +9,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton
 import asyncio
 
-API_TOKEN = '5438743805:AAEELhyGnWAEhCJByyrd62jyp8RNRPm1Tks'
+API_TOKEN = '5438743805:AAEv-1seOy-B9CdsVwsuVqn9-eKTPpObjRo'
 
 logging.basicConfig(level=logging.INFO)
 ADMINS = 5215767348
