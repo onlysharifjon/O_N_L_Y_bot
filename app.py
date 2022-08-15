@@ -6,8 +6,6 @@ from keyboards.default.startkey import startbut
 from keyboards.inline.avtor import FOLLOWER_INSTA, LIKES_INSTA, WIEW_INSTAGRAM, PAY_URL
 from keyboards.default.socials import contact, startnak, menu_nak, KEYBOARD_PAY
 from aiogram import Bot, Dispatcher, executor, types
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton
-import asyncio
 
 API_TOKEN = '5438743805:AAEv-1seOy-B9CdsVwsuVqn9-eKTPpObjRo'
 
@@ -35,7 +33,8 @@ async def sharif(message: types.Message):
     username = message.chat.username
     phone_number = message.contact.phone_number
     user_id = message.contact.user_id
-    is_updated = insert_or_update(full_name, username, phone_number, user_id)
+    # is_updated = insert_or_update(full_name, username, phone_number, user_id)
+    is_updated = True
     await bot.send_message(ADMINS, message.contact)
     if is_updated:
         await message.answer(f"Siz Botimizning qadrdon foydalanuvchisi <b>XUSH KELIBSIZ</b>\n{message.from_user.full_name}", reply_markup=startnak)
