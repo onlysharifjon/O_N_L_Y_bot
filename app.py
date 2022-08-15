@@ -37,7 +37,7 @@ async def sharif(message: types.Message):
     is_updated = True
     await bot.send_message(ADMINS, message.contact)
     if is_updated:
-        await message.answer(f"Siz Botimizning qadrdon foydalanuvchisi <b>XUSH KELIBSIZ</b>\n{message.from_user.full_name}", reply_markup=startnak)
+        await message.answer(f"Kontakt qabul qilindi\n<b>XUSH KELIBSIZ</b>{message.from_user.full_name}", reply_markup=startnak)
     else:
         await message.answer("Qo'shildi", reply_markup=startnak)
 
