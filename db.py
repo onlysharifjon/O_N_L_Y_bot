@@ -4,7 +4,12 @@ import psycopg2
 def insert_or_update(full_name, username, phone_number, user_id):
     try:
         is_updated = False
-        conn = psycopg2.connect(host='localhost', database='telegram', user='postgres', password='1')
+        conn = psycopg2.connect(
+            host='ec2-54-86-106-48.compute-1.amazonaws.com',
+            database='df54l86vpk4abu',
+            user='amwwsumvwyurje',
+            password='9b021f7784a46f4768e6a6c25a7681dd2b425a30d5268c9a425bfd3af74bfbc2'
+        )
 
         cursor = conn.cursor()
 
