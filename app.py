@@ -7,7 +7,7 @@ from keyboards.inline.avtor import FOLLOWER_INSTA, LIKES_INSTA, WIEW_INSTAGRAM, 
 from keyboards.default.socials import contact, startnak, menu_nak, KEYBOARD_PAY
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5438743805:AAEv-1seOy-B9CdsVwsuVqn9-eKTPpObjRo'
+API_TOKEN = '5438743805:AAEv-1seOy-B9CdsVwsuVan9-eKTPpObjRo'
 
 logging.basicConfig(level=logging.INFO)
 ADMINS = 5215767348
