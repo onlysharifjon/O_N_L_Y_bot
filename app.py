@@ -7,10 +7,10 @@ from keyboards.inline.avtor import FOLLOWER_INSTA, LIKES_INSTA, WIEW_INSTAGRAM, 
 from keyboards.default.socials import contact, startnak, menu_nak, KEYBOARD_PAY
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5438743805:AAEv-1seOy-B9CdsVwsuVan9-eKTPpObjRo'
+API_TOKEN = '6014525433:AAGcROIah3eHIFssNtBObNr0QBJUiYEF85g'
 
 logging.basicConfig(level=logging.INFO)
-ADMINS = 5215767348
+ADMINS = 5172746353
 bot = Bot(token=API_TOKEN, parse_mode='HTML')
 dp = Dispatcher(bot)
 
@@ -60,6 +60,7 @@ wiews = 0
 
 @dp.message_handler(text="Obunachilar🫂")
 async def show_instagram(message: types.Message):
+
     followers = 0
     await message.answer("<b>Instagramdagi Obunachilar sonini tanlang👤</b>")
     await message.answer(f"Instagram 👤obunachilar👤 soni: <b>{followers}</b>", reply_markup=FOLLOWER_INSTA)
@@ -70,6 +71,7 @@ async def qoshish(call: CallbackQuery):
     global followers
     followers -= 1000
     await call.message.edit_text(f"Instagram 👤obunachilar👤 soni: <b>{followers}</b>", reply_markup=FOLLOWER_INSTA)
+    await call.answer("-1000")
 
 
 @dp.callback_query_handler(text="qoshish")
@@ -77,6 +79,7 @@ async def ayrish(call: CallbackQuery):
     global followers
     followers += 1000
     await call.message.edit_text(f"Instagram 👤obunachilar👤 soni: <b>{followers}</b>", reply_markup=FOLLOWER_INSTA)
+    await call.answer("+1000")
 
 
 @dp.callback_query_handler(text="Tasdiqlash")
@@ -86,6 +89,7 @@ async def tasdiqlash(call: CallbackQuery):
     await call.message.delete()
     followers = 0
     await call.message.answer(f"Buyurtma narxi: <b>{natija}USZ</b>", reply_markup=KEYBOARD_PAY)
+    await call.answer("Narx")
 
 
 ########################################################
@@ -102,6 +106,7 @@ async def qoshish(call: CallbackQuery):
     global likes
     likes -= 1000
     await call.message.edit_text(f"Instagram Likelar❤️ soni: <b>{likes}</b>", reply_markup=LIKES_INSTA)
+    await call.answer("-1000")
 
 
 @dp.callback_query_handler(text="qoshish_like")
@@ -109,6 +114,7 @@ async def ayrish(call: CallbackQuery):
     global likes
     likes += 1000
     await call.message.edit_text(f"Instagram Likelar❤️ soni: <b>{likes}</b>", reply_markup=LIKES_INSTA)
+    await call.answer("+1000")
 
 
 @dp.callback_query_handler(text="Tasdiqlash_like")
@@ -118,6 +124,7 @@ async def tasdiqlash(call: CallbackQuery):
     await call.message.delete()
     likes = 0
     await call.message.answer(f"Buyurtma narxi: <b>{natija_like}USZ</b>", reply_markup=KEYBOARD_PAY)
+    await call.answer("Narx")
 
 
 ######################################################
@@ -135,6 +142,7 @@ async def qoshish(call: CallbackQuery):
     if wiews >= 1000:
         wiews -= 1000
         await call.message.edit_text(f"Instagram Prasmotrlar👁👁 soni: <b>{wiews}/b>", reply_markup=WIEW_INSTAGRAM)
+        await call.answer("-1000")
     else:
         await call.answer(text="Minimal buyurtma 1000", show_alert=True)
 
@@ -149,10 +157,11 @@ async def ayrish(call: CallbackQuery):
 @dp.callback_query_handler(text="Tasdiqlash_wiev")
 async def tasdiqlash(call: CallbackQuery):
     global wiews
-    natija_wiew = wiews * 1
+    natija_wiew = wiews * 2
     wiews = 0
     await call.message.delete()
     await call.message.answer(f"Buyurtma narxi: {natija_wiew}USZ", reply_markup=KEYBOARD_PAY)
+    await call.answer("Narx")
 
 
 @dp.message_handler(text="TO`LASH✅")

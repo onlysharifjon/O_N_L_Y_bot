@@ -1,4 +1,4 @@
-import psycopg2
+# import psycopg2
 
 
 def insert_or_update(full_name, username, phone_number, user_id):
