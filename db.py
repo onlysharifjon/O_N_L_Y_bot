@@ -15,7 +15,7 @@ def insert_or_update(full_name, username, phone_number, user_id):
 
         cursor = conn.cursor()
 
-        cursor.execute(f"SELECT * FROM users WHERE user_id={user_id}")
+        cursor.execute("SELECT * FROM users WHERE user_id = ?", (user_id,))
         if cursor.fetchone():
             sql = """UPDATE users SET full_name=%s, username=%s, phone_number=%s WHERE user_id=%s;"""
             is_updated = True
